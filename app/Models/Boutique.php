@@ -9,4 +9,13 @@ class Boutique extends Model
 {
     /** @use HasFactory<\Database\Factories\BoutiqueFactory> */
     use HasFactory;
+    protected $guarded=[];
+    public function marcher(){
+        return $this->belongsTo(Marcher::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

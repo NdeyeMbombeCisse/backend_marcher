@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $guarded=[];
+
+
+    public function promotions(){
+        return $this->hasMany(Promotion::class);
+    }
+
+    public function produits(){
+        return $this->belongsToMany(Produit::class,'commandes');
+    }
 }
